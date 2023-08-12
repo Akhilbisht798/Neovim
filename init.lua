@@ -196,6 +196,9 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
 
+  'nvim-lua/plenary.nvim',
+  'ThePrimeagen/harpoon'
+
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
@@ -306,6 +309,12 @@ vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
+
+-- harpoonConfig
+vim.keymap.set('n', '<leader>ha', require("harpoon.mark").add_file, { desc = 'Harpoon [H]arpoon [A]dd' })
+vim.keymap.set('n', '<leader>hs',require("harpoon.ui").toggle_quick_menu, { desc = 'Harpoon [H]arpoon [S]how' })
+vim.keymap.set('n', '<leader>hp',require("harpoon.ui").nav_prev, { desc = 'Harpoon [H]arpoon [P]rivious' })
+vim.keymap.set('n', '<leader>hn',require("harpoon.ui").nav_next, { desc = 'Harpoon [H]arpoon [N]ext' })
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
